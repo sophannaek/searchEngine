@@ -21,10 +21,7 @@ from Postings import PositionalPostings
 class PositionalInvertedIndex: 
     
     def __init__(self):
-        # {term: List of Postings}
-        # self.__postingList = {}
         self.__index = {}
-
         # list of all terms 
         self.__mVocabulary = []
         self.__tokens = {}
@@ -35,7 +32,7 @@ class PositionalInvertedIndex:
         postingList = []
         if term in self.__index:
             postingList = self.__index[term]
-
+    
         return postingList
 
     
@@ -54,9 +51,6 @@ class PositionalInvertedIndex:
             new_posting.insertIndex(ind)
             postingList.append(new_posting)
             self.__index[term] = postingList
-
-            # add term to vocab
-            # self.__mVocabulary.append(term)
         else: 
             # if term already exist in the dictionary 
             postingList = self.__index[term]
@@ -66,7 +60,7 @@ class PositionalInvertedIndex:
                 # add new term position to the existed posting
                 posting.insertIndex(ind)
             else: 
-                # occur in new document 
+                # term appears in the new document 
                 new_posting = PositionalPostings(docId)
                 new_posting.insertIndex(ind)
                 # add new posting into the exiting postingList 

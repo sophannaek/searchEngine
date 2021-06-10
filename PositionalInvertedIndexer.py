@@ -3,7 +3,6 @@ PositionalInvertedIndexer: main driver app for the InvertedIndex
 '''
 
 # save each file path into a dic
-
 from PositionalInvertedIndex import PositionalInvertedIndex 
 from Corpus import Corpus
 from nltk.tokenize import word_tokenize
@@ -46,7 +45,7 @@ def searchengine(directory):
 
 
 indexer, corpus = searchengine(directory)
-term ='find'
+term ='how long'
 #need to normalize the token as well
 postlist = indexer.getPostings(term)
 
@@ -56,3 +55,4 @@ for p in postlist:
     print(corpus[p.getDocumentId()].getTitle())
     
 # print(len(indexer.getVocabulary()))
+

@@ -1,6 +1,4 @@
 import json
-
-
 class TextFileDocument: 
     def __init__(self, mDocumentId:int, filePath:str, fileName:str): 
         self.__mDocumentId = mDocumentId

@@ -17,7 +17,6 @@ class Postings:
 
 
 
-
 # <PositionalPosting2: <docId, [pos1, pos2...]>, <docId, [pos1, pos2...]>...>
 
 class PositionalPostings: 
@@ -34,6 +33,9 @@ class PositionalPostings:
     
     def getDocumentId(self): 
         return self.__documentId
+
+    def setPositions(self, positions:[]):
+        self.__positions = positions
     
     def insertIndex(self,ind: int):
         self.__positions.append(ind)
